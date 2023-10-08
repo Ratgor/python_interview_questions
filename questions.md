@@ -622,7 +622,7 @@ class NextClass(FirstClass):
 class D:          attr = 3      #  D:3   E:2
 class B(D)        pass          #   |     |
 class E:          attr = 2      #   B    C:1
-class C(E):       attr = 1      #    /   /
+class C(E):       attr = 1      #    \   /
 class A(B, C):    pass          #      A
 X = A()                         #      |
 print(X.attr)                   #      X
@@ -635,10 +635,10 @@ print(X.attr)                   #      X
 **Пример наследования в ромбовидных иерархаических деревьях:**
 
 ```python
-class D:          attr = 3      #  D:3   D:3
-class B(D)        pass          #   |     |
+class D:          attr = 3      #     D:3 
+class B(D)        pass          #    /   \
 class C(D):       attr = 1      #   B    C:1
-class A(B, C):    pass          #    /   /
+class A(B, C):    pass          #    \   /
 X = A()                         #      A
 print(X.attr)                   #      |
                                 #      X
